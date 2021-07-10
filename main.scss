@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     padding: 1em;
     margin: 1em;
-    border-bottom: 2px solid $primary-color;
+    border-bottom: 3px solid $primary-color;
     h1 {
         color: $primary-color;
     }
@@ -67,6 +67,34 @@ main {
             .product-info {
                 text-align: center;
             }
+        }
+    }
+
+
+    form#product_form {
+        width: 50vw;
+
+        .form-element {
+            margin: 1em;
+            display: flex;
+            align-items: center;
+
+            label {
+                width: 20%;
+                margin: 0 1em;
+            }
+
+            input, select {
+                padding: .6em;
+                outline: none;
+                border-radius: 5px;
+                border: 1px solid gray;
+                width: 50%;
+            }
+        }
+
+        .description {
+            text-align: center;
         }
     }
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/main.css" rel="stylesheet" />
+    <title>Add Product</title>
+</head>
+<body>
+    <header>
+        <h1>Product List</h1>
+
+        <ul id="buttons">
+            <li>
+                <a href="#" name="save">Save</a>
+            </li>
+            <li>
+                <a href="#" name="cancel">Cancel</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <form id="product_form" action="" method="">
+            <div class="form-element">
+                <label for="sku">SKU</label>
+                <input id="sku" type="text" name="sku" required placeholder="Prodcut SKU" />
+            </div>
+
+            <div class="form-element">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" required placeholder="Prodcut Name" />
+            </div>
+
+            <div class="form-element">
+                <label for="price">Price ($)</label>
+                <input id="price" type="text" name="price" required placeholder="Prodcut Price" />
+            </div>
+
+            <div class="form-element">
+                <label for="productType">Product Type</label>
+                <select id="#productType" name="productType" required>
+                    <option value="">Select Product Type</option>
+                    <option value="DVD">DVD</option>
+                    <option value="Book">Book</option>
+                    <option value="Furniture">Furniture</option>
+                </select>
+            </div>
+
+            <div id="dvd">
+                <div class="form-element">
+                    <label for="size">Size (MB)</label>
+                    <input id="size" type="number" name="size" required placeholder="DVD Size" />
+                </div>
+                <div class="description">
+                    Please, provide size
+                </div>
+            </div>
+
+            <div id="furniture">
+                <div class="form-element">
+                    <label for="height">Height (CM)</label>
+                    <input id="height" type="text" name="height" required placeholder="Furniture Height" />
+                </div>
+                <div class="form-element">
+                    <label for="width">Width (CM)</label>
+                    <input id="width" type="text" name="width" required placeholder="Furniture Width" />
+                </div>
+                <div class="form-element">
+                    <label for="length">Length (CM)</label>
+                    <input id="length" type="text" name="length" required placeholder="Furniture Length" />
+                </div>
+                <div class="description">
+                    Please, provide dimensions
+                </div>
+            </div>
+
+            <div id="book">
+                <div class="form-element">
+                    <label for="weight">Weight (KG)</label>
+                    <input id="weight" type="text" name="weight" required placeholder="Book Weight" />
+                </div>
+                <div class="description">
+                    Please, provide weight
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
