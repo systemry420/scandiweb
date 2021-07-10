@@ -8,6 +8,60 @@
     <title>Products</title>
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <h1>Product List</h1>
+
+        <ul id="buttons">
+            <li>
+                <a href="add-product.html" name="add">Add</a>
+            </li>
+            <li>
+                <a href="" name="deleteAll">Mass Delete</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="category-disc">
+            <article class="product">
+                <input type="checkbox" name="delete" class="delete-checkbox">
+                <div class="product-info">
+                    <p class="product-sku">JVC200123</p>
+                    <p class="product-name">Acme Disc</p>
+                    <p class="product-price">20.00 $</p>
+                    <p class="product-property">Size: 700 MB</p>    
+                </div>
+            </article>
+
+            <article class="product">
+                <input type="checkbox" name="delete" class="delete-checkbox">
+                <p class="product-sku">JVC200123</p>
+                <p class="product-name">Acme Disc</p>
+                <p class="product-price">20.00 $</p>
+                <p class="product-property">Size: 700 MB</p>
+            </article>
+        </section>
+
+        <section class="category-book">                        
+            <article class="product">
+                <input type="checkbox" name="delete" class="delete-checkbox">
+
+                <p class="product-sku">JVC200123</p>
+                <p class="product-name">Acme Disc</p>
+                <p class="product-price">20.00 $</p>
+                <p class="product-property">Size: 700 MB</p>
+            </article>
+        </section>
+
+        <section class="category-furniture">                        
+            <article class="product">
+                <input type="checkbox" name="delete" class="delete-checkbox">
+                <p class="product-sku">JVC200123</p>
+                <p class="product-name">Acme Disc</p>
+                <p class="product-price">20.00 $</p>
+                <p class="product-property">Size: 700 MB</p>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
