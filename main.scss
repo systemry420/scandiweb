@@ -27,7 +27,7 @@ header {
         li {
             margin: 1em;
 
-            a {
+            a, .button {
                 background-color: $primary-color;
                 color: #fff;
                 padding: .5em 2em;
@@ -36,7 +36,7 @@ header {
                 box-shadow: 1px 1px 2px 2px lightgray;
             }
             
-            a:hover {
+            a:hover, .button:hover {
                 background-color: blue;
             }
             
@@ -70,10 +70,7 @@ main {
         }
     }
 
-
-    form#product_form {
-        width: 50vw;
-
+    #form-elements {
         .form-element {
             margin: 1em;
             display: flex;
@@ -92,10 +89,10 @@ main {
                 width: 50%;
             }
         }
+    }
 
-        .description {
-            text-align: center;
-        }
+    .description {
+        text-align: center;
     }
 }
 

@@ -24,7 +24,7 @@ header ul#buttons {
 header ul#buttons li {
   margin: 1em;
 }
-header ul#buttons li a {
+header ul#buttons li a, header ul#buttons li .button {
   background-color: #1100ac;
   color: #fff;
   padding: 0.5em 2em;
@@ -32,7 +32,7 @@ header ul#buttons li a {
   border-radius: 20px;
   box-shadow: 1px 1px 2px 2px lightgray;
 }
-header ul#buttons li a:hover {
+header ul#buttons li a:hover, header ul#buttons li .button:hover {
   background-color: blue;
 }
 header ul#buttons li a, header ul#buttons li a:hover {
@@ -59,26 +59,23 @@ main section article.product input {
 main section article.product .product-info {
   text-align: center;
 }
-main form#product_form {
-  width: 50vw;
-}
-main form#product_form .form-element {
+main #form-elements .form-element {
   margin: 1em;
   display: flex;
   align-items: center;
 }
-main form#product_form .form-element label {
+main #form-elements .form-element label {
   width: 20%;
   margin: 0 1em;
 }
-main form#product_form .form-element input, main form#product_form .form-element select {
+main #form-elements .form-element input, main #form-elements .form-element select {
   padding: 0.6em;
   outline: none;
   border-radius: 5px;
   border: 1px solid gray;
   width: 50%;
 }
-main form#product_form .description {
+main .description {
   text-align: center;
 }
 

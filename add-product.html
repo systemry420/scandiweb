@@ -8,21 +8,22 @@
     <title>Add Product</title>
 </head>
 <body>
+    <form id="product_form" action="add-product.php" method="post">
     <header>
-        <h1>Product List</h1>
+        <h1>Add Product</h1>
 
         <ul id="buttons">
             <li>
-                <a href="#" name="save">Save</a>
+                <button class="button" type="submit" href="#" name="save">Save</button>
             </li>
             <li>
-                <a href="#" name="cancel">Cancel</a>
+                <button class="button" href="#" name="cancel">Cancel</button>
             </li>
         </ul>
     </header>
 
     <main>
-        <form id="product_form" action="" method="">
+        <div id="form-elements">
             <div class="form-element">
                 <label for="sku">SKU</label>
                 <input id="sku" type="text" name="sku" required placeholder="Prodcut SKU" />
@@ -35,7 +36,7 @@
 
             <div class="form-element">
                 <label for="price">Price ($)</label>
-                <input id="price" type="text" name="price" required placeholder="Prodcut Price" />
+                <input id="price" type="number" name="price" required placeholder="Prodcut Price" />
             </div>
 
             <div class="form-element">
@@ -61,15 +62,15 @@
             <div id="furniture">
                 <div class="form-element">
                     <label for="height">Height (CM)</label>
-                    <input id="height" type="text" name="height" required placeholder="Furniture Height" />
+                    <input id="height" type="number" name="height" required placeholder="Furniture Height" />
                 </div>
                 <div class="form-element">
                     <label for="width">Width (CM)</label>
-                    <input id="width" type="text" name="width" required placeholder="Furniture Width" />
+                    <input id="width" type="number" name="width" required placeholder="Furniture Width" />
                 </div>
                 <div class="form-element">
                     <label for="length">Length (CM)</label>
-                    <input id="length" type="text" name="length" required placeholder="Furniture Length" />
+                    <input id="length" type="number" name="length" required placeholder="Furniture Length" />
                 </div>
                 <div class="description">
                     Please, provide dimensions
@@ -79,13 +80,17 @@
             <div id="book">
                 <div class="form-element">
                     <label for="weight">Weight (KG)</label>
-                    <input id="weight" type="text" name="weight" required placeholder="Book Weight" />
+                    <input id="weight" type="number" name="weight" required placeholder="Book Weight" />
                 </div>
                 <div class="description">
                     Please, provide weight
                 </div>
             </div>
-        </form>
+        </div>
     </main>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js" ></script>
 </body>
 </html>
