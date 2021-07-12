@@ -14,10 +14,10 @@
 
         <ul id="buttons">
             <li>
-                <button class="button" type="submit" href="#" name="save">Save</button>
+                <button class="button" type="submit" name="save">Save</button>
             </li>
             <li>
-                <button class="button" href="#" name="cancel">Cancel</button>
+                <a class="button" href="index.php">Cancel</a>
             </li>
         </ul>
     </header>
@@ -26,7 +26,7 @@
         <div id="form-elements">
             <div class="form-element">
                 <label for="sku">SKU</label>
-                <input id="sku" type="text" name="sku"  placeholder="Prodcut SKU" />
+                <input id="sku" type="text" name="sku" readonly />
             </div>
 
             <div class="form-element">
@@ -89,8 +89,13 @@
         </div>
     </main>
     </form>
+    <script type="text/javascript" src="app.js" ></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js" ></script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script>
+
+        console.log("helll");
+    </script> -->
 </body>
 </html>

@@ -23,6 +23,29 @@
 
     <main>
         <section class="category-disc">
+        <?php
+
+            include './includes/connection.php';
+
+            $sql = "Select * FROM `products`";
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+         ?>
+                <article class="product">
+                <input type="checkbox" name="delete" class="delete-checkbox">
+                <div class="product-info">
+                    <p class="product-sku"> <?php echo $row['sku']; ?></p>
+                    <p class="product-name"> <?php echo $row['name']; ?></p>
+                    <p class="product-price"> <?php echo $row['price']. " $"; ?></p>
+                    <p class="product-property">Size: 700 MB</p>    
+                </div>
+            </article>
+        <?php
+            }
+
+            $conn->close();
+        ?>
             <article class="product">
                 <input type="checkbox" name="delete" class="delete-checkbox">
                 <div class="product-info">

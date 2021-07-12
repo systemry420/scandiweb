@@ -27,10 +27,11 @@ header ul#buttons li {
 header ul#buttons li a, header ul#buttons li .button {
   background-color: #1100ac;
   color: #fff;
-  padding: 0.5em 2em;
+  padding: 0.6em 2.2em;
   border: none;
   border-radius: 20px;
   box-shadow: 1px 1px 2px 2px lightgray;
+  cursor: pointer;
 }
 header ul#buttons li a:hover, header ul#buttons li .button:hover {
   background-color: blue;
@@ -46,6 +47,7 @@ main {
 main section {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 main section article.product {
   margin: 1em;
@@ -74,6 +76,9 @@ main #form-elements .form-element input, main #form-elements .form-element selec
   border-radius: 5px;
   border: 1px solid gray;
   width: 50%;
+}
+main #form-elements #dvd, main #form-elements #furniture, main #form-elements #book {
+  display: none;
 }
 main .description {
   text-align: center;
