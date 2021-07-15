@@ -1,96 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style/main.css" rel="stylesheet" />
     <title>Add Product</title>
 </head>
+
 <body>
     <form id="product_form" action="add-product.php" method="post">
-    <header>
-        <h1>Add Product</h1>
+        <header>
+            <h1>Add Product</h1>
+            <ul id="buttons">
+                <li>
+                    <button class="button" type="submit" name="save">Save</button>
+                </li>
+                <li>
+                    <a class="button" href="index.php">Cancel</a>
+                </li>
+            </ul>
+        </header>
 
-        <ul id="buttons">
-            <li>
-                <button class="button" type="submit" name="save">Save</button>
-            </li>
-            <li>
-                <a class="button" href="index.php">Cancel</a>
-            </li>
-        </ul>
-    </header>
-
-    <main>
-        <div id="form-elements">
-            <div class="form-element">
-                <label for="sku">SKU</label>
-                <input id="sku" type="text" name="sku" readonly />
-            </div>
-
-            <div class="form-element">
-                <label for="name">Name</label>
-                <input id="name" type="text" name="name"  placeholder="Prodcut Name" />
-            </div>
-
-            <div class="form-element">
-                <label for="price">Price ($)</label>
-                <input id="price" type="number" name="price"  placeholder="Prodcut Price" />
-            </div>
-
-            <div class="form-element">
-                <label for="productType">Product Type</label>
-                <select id="#productType" name="productType" >
-                    <option value="">Select Product Type</option>
-                    <option value="DVD">DVD</option>
-                    <option value="Book">Book</option>
-                    <option value="Furniture">Furniture</option>
-                </select>
-            </div>
-
-            <div id="dvd">
+        <main>
+            <div id="form-elements">
                 <div class="form-element">
-                    <label for="size">Size (MB)</label>
-                    <input id="size" type="number" name="size"  placeholder="DVD Size" />
+                    <label for="sku">SKU</label>
+                    <input id="sku" type="text" name="sku" readonly />
                 </div>
-                <div class="description">
-                    Please, provide size
-                </div>
-            </div>
 
-            <div id="furniture">
                 <div class="form-element">
-                    <label for="height">Height (CM)</label>
-                    <input id="height" type="number" name="height"  placeholder="Furniture Height" />
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name" placeholder="Prodcut Name" />
                 </div>
-                <div class="form-element">
-                    <label for="width">Width (CM)</label>
-                    <input id="width" type="number" name="width"  placeholder="Furniture Width" />
-                </div>
-                <div class="form-element">
-                    <label for="length">Length (CM)</label>
-                    <input id="length" type="number" name="length"  placeholder="Furniture Length" />
-                </div>
-                <div class="description">
-                    Please, provide dimensions
-                </div>
-            </div>
 
-            <div id="book">
                 <div class="form-element">
-                    <label for="weight">Weight (KG)</label>
-                    <input id="weight" type="number" name="weight"  placeholder="Book Weight" />
+                    <label for="price">Price ($)</label>
+                    <input id="price" type="number" name="price" placeholder="Prodcut Price" />
                 </div>
-                <div class="description">
-                    Please, provide weight
+
+                <div class="form-element">
+                    <label for="productType">Product Type</label>
+                    <select id="#productType" name="productType">
+                        <option value="">Select Product Type</option>
+                        <option value="DVD">DVD</option>
+                        <option value="Book">Book</option>
+                        <option value="Furniture">Furniture</option>
+                    </select>
+                </div>
+
+                <div id="dvd">
+                    <div class="form-element">
+                        <label for="size">Size (MB)</label>
+                        <input id="size" type="number" name="size" placeholder="DVD Size" />
+                    </div>
+                    <div class="description">Please, provide size</div>
+                </div>
+
+                <div id="furniture">
+                    <div class="form-element">
+                        <label for="height">Height (CM)</label>
+                        <input id="height" type="number" name="height" placeholder="Furniture Height" />
+                    </div>
+                    <div class="form-element">
+                        <label for="width">Width (CM)</label>
+                        <input id="width" type="number" name="width" placeholder="Furniture Width" />
+                    </div>
+                    <div class="form-element">
+                        <label for="length">Length (CM)</label>
+                        <input id="length" type="number" name="length" placeholder="Furniture Length" />
+                    </div>
+                    <div class="description">Please, provide dimensions</div>
+                </div>
+
+                <div id="book">
+                    <div class="form-element">
+                        <label for="weight">Weight (KG)</label>
+                        <input id="weight" type="number" name="weight" placeholder="Book Weight" />
+                    </div>
+                    <div class="description">Please, provide weight</div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
     </form>
-    <script type="text/javascript" src="app.js" ></script>
-
+    <script type="text/javascript" src="app.js"></script>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script>
@@ -98,4 +92,5 @@
         console.log("helll");
     </script> -->
 </body>
+
 </html>
