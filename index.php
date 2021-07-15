@@ -39,7 +39,7 @@
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
                                 <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
-                                <p class="product-property">Size: 700 MB</p>
+                                <p class="product-property">Size:  <?php echo $row['size']; ?></p>
                             </div>
                         </article>
                     <?php
