@@ -28,7 +28,8 @@
                 <h2>DVD</h2>
                 <div>
                 <?php
-                    include './includes/connection.php';
+                    include './model/app.php';
+                    $conn = App::connect();
                     $sql = "select * FROM `dvd`, `products` WHERE sku=product_sku";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
@@ -53,7 +54,7 @@
                 <h2>Furniture</h2>
                 <div>
                     <?php
-                    include './includes/connection.php';
+                    $conn = App::connect();
                     $sql = "select * FROM `furniture`, `products` WHERE sku=product_sku";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
@@ -80,7 +81,7 @@
                 <h2>Books</h2>
                 <div>
                     <?php
-                    include './includes/connection.php';
+                    $conn = App::connect();
                     $sql = "select * FROM `books`, `products` WHERE sku=product_sku";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
@@ -101,23 +102,21 @@
                 </div>
             </section>
             <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (isset($_POST['deleteAll'])) {
-                    $selectedProducts = $_POST['delete'];
-
-                    if (!empty($selectedProducts)) {
-
-                        include './includes/connection.php';
-                        $sql = "DELETE FROM products WHERE sku in ";
-                        $sql .= "('" . implode("','", array_values($_POST['delete'])) . "')";
-
-                        $result = $conn->query($sql);
-
-                        $conn->close();
-                        header("Location: index.php");
+                $conn = App::connect();
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if (isset($_POST['deleteAll'])) {
+                        $selectedProducts = $_POST['delete'];
+                        if (!empty($selectedProducts)) {
+                            $sql = "DELETE FROM products WHERE sku IN ";
+                            $sql .= "('" . implode("','", array_values($selectedProducts)) . "')";
+                            $result = $conn->query($sql);
+                            if ($result == true) {
+                                header("Location: index.php");
+                                $conn->close();
+                            }
+                        }
                     }
                 }
-            }
             ?>
         </main>
     </form>
