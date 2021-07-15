@@ -46,8 +46,12 @@ main {
 }
 main section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+main section div {
+  display: flex;
   flex-wrap: wrap;
+  min-height: min-content;
 }
 main section article.product {
   margin: 1em;

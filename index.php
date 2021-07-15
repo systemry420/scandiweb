@@ -25,41 +25,92 @@
 
         <main>
             <section class="category-disc">
+                <h2>DVD</h2>
+                <div>
                 <?php
-                include './includes/connection.php';
-                $sql = "select * FROM `products`";
-                $result = $conn->query($sql);
-                while ($row = $result->fetch_assoc()) {
-                ?>
-                    <article class="product">
-                        <input type="checkbox" name="delete[]" value="<?php echo $row['sku']; ?>" class="delete-checkbox">
-                        <div class="product-info">
-                            <p class="product-sku"> <?php echo $row['sku']; ?></p>
-                            <p class="product-name"> <?php echo $row['name']; ?></p>
-                            <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
-                            <p class="product-property">Size: 700 MB</p>
-                        </div>
-                    </article>
-                <?php
-                }
-                $conn->close();
-                ?>
+                    include './includes/connection.php';
+                    $sql = "select * FROM `dvd`, `products` WHERE sku=product_sku";
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                    ?>
+                        <article class="product">
+                            <input type="checkbox" name="delete[]" value="<?php echo $row['sku']; ?>" class="delete-checkbox">
+                            <div class="product-info">
+                                <p class="product-sku"> <?php echo $row['sku']; ?></p>
+                                <p class="product-name"> <?php echo $row['name']; ?></p>
+                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
+                                <p class="product-property">Size: 700 MB</p>
+                            </div>
+                        </article>
+                    <?php
+                    }
+                    $conn->close();
+                    ?>
+                </div>
+            </section>
+
+            <section class="category-furniture">
+                <h2>Furniture</h2>
+                <div>
+                    <?php
+                    include './includes/connection.php';
+                    $sql = "select * FROM `furniture`, `products` WHERE sku=product_sku";
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                    ?>
+                        <article class="product">
+                            <input type="checkbox" name="delete[]" value="<?php echo $row['sku']; ?>" class="delete-checkbox">
+                            <div class="product-info">
+                                <p class="product-sku"> <?php echo $row['sku']; ?></p>
+                                <p class="product-name"> <?php echo $row['name']; ?></p>
+                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
+                                <p class="product-property">Height: <?php echo $row['height'] ?> </p>
+                                <p class="product-property">Width: <?php echo $row['width'] ?></p>
+                                <p class="product-property">Length: <?php echo $row['length'] ?></p>
+                            </div>
+                        </article>
+                    <?php
+                    }
+                    $conn->close();
+                    ?>
+                </div>
             </section>
 
             <section class="category-book">
-
+                <h2>Books</h2>
+                <div>
+                    <?php
+                    include './includes/connection.php';
+                    $sql = "select * FROM `books`, `products` WHERE sku=product_sku";
+                    $result = $conn->query($sql);
+                    while ($row = $result->fetch_assoc()) {
+                    ?>
+                        <article class="product">
+                            <input type="checkbox" name="delete[]" value="<?php echo $row['sku']; ?>" class="delete-checkbox">
+                            <div class="product-info">
+                                <p class="product-sku"> <?php echo $row['sku']; ?></p>
+                                <p class="product-name"> <?php echo $row['name']; ?></p>
+                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
+                                <p class="product-property">Weight: <?php echo $row['weight'] ?> </p>
+                            </div>
+                        </article>
+                    <?php
+                    }
+                    $conn->close();
+                    ?>
+                </div>
             </section>
             <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (isset($_POST['deleteAll'])) {
                     $selectedProducts = $_POST['delete'];
-    
-                    if(!empty($selectedProducts)) {   
-    
-                        include './includes/connection.php';                        
+
+                    if (!empty($selectedProducts)) {
+
+                        include './includes/connection.php';
                         $sql = "DELETE FROM products WHERE sku in ";
-                        $sql.= "('".implode("','",array_values($_POST['delete']))."')";
-    
+                        $sql .= "('" . implode("','", array_values($_POST['delete'])) . "')";
+
                         $result = $conn->query($sql);
 
                         $conn->close();
