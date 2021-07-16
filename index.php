@@ -15,18 +15,16 @@
             <h1>Product List</h1>
             <ul id="buttons">
                 <li>
-                    <a href="add-product.html" name="add">Add</a>
+                    <a class="button" href="add-product.html" id="add">Add</a>
                 </li>
                 <li>
-                    <button class="button" type="submit" name="deleteAll">Mass Delete</button>
+                    <button class="button" type="submit" id="deleteAll" name="deleteAll">Mass Delete</button>
                 </li>
             </ul>
         </header>
 
         <main>
             <section class="category-disc">
-                <h2>DVD</h2>
-                <div>
                 <?php
                     include './model/app.php';
                     $conn = App::connect();
@@ -39,20 +37,17 @@
                             <div class="product-info">
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
-                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
-                                <p class="product-property">Size:  <?php echo $row['size']; ?></p>
+                                <p class="product-price"> <?php echo $row['price']; ?> $</p>
+                                <p class="product-property"><strong>Size:</strong>  <?php echo $row['size']; ?> MB</p>
                             </div>
                         </article>
                     <?php
                     }
                     $conn->close();
                     ?>
-                </div>
             </section>
 
             <section class="category-furniture">
-                <h2>Furniture</h2>
-                <div>
                     <?php
                     $conn = App::connect();
                     $sql = "select * FROM `furniture`, `products` WHERE sku=product_sku";
@@ -64,22 +59,19 @@
                             <div class="product-info">
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
-                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
-                                <p class="product-property">Height: <?php echo $row['height'] ?> </p>
-                                <p class="product-property">Width: <?php echo $row['width'] ?></p>
-                                <p class="product-property">Length: <?php echo $row['length'] ?></p>
+                                <p class="product-price"> <?php echo $row['price']; ?> $</p>
+                                <p class="product-property"><strong>Height:</strong> <?php echo $row['height'] ?> </p>
+                                <p class="product-property"><strong>Width:</strong> <?php echo $row['width'] ?></p>
+                                <p class="product-property"><strong>Length:</strong> <?php echo $row['length'] ?></p>
                             </div>
                         </article>
                     <?php
                     }
                     $conn->close();
                     ?>
-                </div>
             </section>
 
             <section class="category-book">
-                <h2>Books</h2>
-                <div>
                     <?php
                     $conn = App::connect();
                     $sql = "select * FROM `books`, `products` WHERE sku=product_sku";
@@ -91,22 +83,21 @@
                             <div class="product-info">
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
-                                <p class="product-price"> <?php echo $row['price'] . " $"; ?></p>
-                                <p class="product-property">Weight: <?php echo $row['weight'] ?> </p>
+                                <p class="product-price"> <?php echo $row['price']; ?> $</p>
+                                <p class="product-property"><strong>Weight:</strong> <?php echo $row['weight'] ?> KG</p>
                             </div>
                         </article>
                     <?php
                     }
                     $conn->close();
                     ?>
-                </div>
             </section>
             <?php
                 $conn = App::connect();
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (isset($_POST['deleteAll'])) {
-                        $selectedProducts = $_POST['delete'];
                         if (!empty($selectedProducts)) {
+                            $selectedProducts = $_POST['delete'];
                             $sql = "DELETE FROM products WHERE sku IN ";
                             $sql .= "('" . implode("','", array_values($selectedProducts)) . "')";
                             $result = $conn->query($sql);

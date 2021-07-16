@@ -9,35 +9,38 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1em;
-  margin: 1em;
-  border-bottom: 3px solid #1100ac;
+  margin: 0 1em 1em 1em;
+  border-bottom: 3px solid #1500d0;
 }
 header h1 {
-  color: #1100ac;
+  color: #1500d0;
+  font-size: 2.5em;
 }
 header ul#buttons {
   display: flex;
   align-self: flex-end;
   list-style-type: none;
+  align-items: center;
 }
 header ul#buttons li {
   margin: 1em;
 }
-header ul#buttons li a, header ul#buttons li .button {
-  background-color: #1100ac;
+header ul#buttons li .button {
+  background-color: #1500d0;
   color: #fff;
-  padding: 0.6em 2.2em;
+  font-size: 1.1em;
+  text-transform: uppercase;
   border: none;
+  padding: 1em 1.2em;
   border-radius: 20px;
   box-shadow: 1px 1px 2px 2px lightgray;
   cursor: pointer;
-}
-header ul#buttons li a:hover, header ul#buttons li .button:hover {
-  background-color: blue;
-}
-header ul#buttons li a, header ul#buttons li a:hover {
   text-decoration: none;
+}
+header ul#buttons li .button:hover {
+  background-color: blue;
 }
 
 main {
@@ -47,11 +50,7 @@ main {
 main section {
   display: flex;
   flex-direction: column;
-}
-main section div {
-  display: flex;
   flex-wrap: wrap;
-  min-height: min-content;
 }
 main section article.product {
   margin: 1em;
@@ -64,6 +63,7 @@ main section article.product input {
 }
 main section article.product .product-info {
   text-align: center;
+  font-size: 1.1em;
 }
 main #form-elements .form-element {
   margin: 1em;
@@ -75,17 +75,19 @@ main #form-elements .form-element label {
   margin: 0 1em;
 }
 main #form-elements .form-element input, main #form-elements .form-element select {
-  padding: 0.6em;
+  padding: 0.8em;
+  width: 50%;
   outline: none;
   border-radius: 5px;
   border: 1px solid gray;
-  width: 50%;
 }
 main #form-elements #dvd, main #form-elements #furniture, main #form-elements #book {
   display: none;
 }
 main .description {
   text-align: center;
+  color: red;
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */

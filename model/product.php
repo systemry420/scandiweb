@@ -43,13 +43,6 @@
 			$query="INSERT INTO products(sku, `name`, price) VALUES ('$sku','$name','$price');";
 			return $query;
 		}
-
-        public function fetchBooks() {
-            $sql = "select * FROM `books`, `products` WHERE sku=product_sku";
-            return Product::$conn->query($sql);
-        }
-
-
     }
 
 

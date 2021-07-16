@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-$primary-color: #1100ac;
+$primary-color: #1500d0;
 $primary-font: 'Roboto', sans-serif;
 
 * {
@@ -12,38 +12,41 @@ $primary-font: 'Roboto', sans-serif;
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 1em;
-    margin: 1em;
+    margin: 0 1em 1em 1em;
     border-bottom: 3px solid $primary-color;
     h1 {
         color: $primary-color;
+        font-size: 2.5em;
     }
-
+    
     ul#buttons {
         display: flex;
         align-self: flex-end;
         list-style-type: none;
+        align-items: center;
 
         li {
             margin: 1em;
 
-            a, .button {
+            .button {
                 background-color: $primary-color;
                 color: #fff;
-                padding: .6em 2.2em;
+                font-size: 1.1em;
+                text-transform: uppercase;
                 border: none;
+                padding: 1em 1.2em;
                 border-radius: 20px;
                 box-shadow: 1px 1px 2px 2px lightgray;
                 cursor: pointer;
+                text-decoration: none;
             }
             
-            a:hover, .button:hover {
+            .button:hover {
                 background-color: blue;
             }
             
-            a, a:hover {
-                text-decoration: none;
-            }
         }
     }
 }
@@ -55,11 +58,7 @@ main {
     section {
         display: flex;
         flex-direction: column;
-        div {
-            display: flex;
-            flex-wrap: wrap;
-            min-height: min-content;
-        }
+        flex-wrap: wrap;
 
         article.product {
             margin: 1em;
@@ -72,6 +71,7 @@ main {
                 
             .product-info {
                 text-align: center;
+                font-size: 1.1em;
             }
         }
     }
@@ -88,11 +88,11 @@ main {
             }
 
             input, select {
-                padding: .6em;
+                padding: .8em;
+                width: 50%;
                 outline: none;
                 border-radius: 5px;
                 border: 1px solid gray;
-                width: 50%;
             }
         }
         
@@ -103,6 +103,8 @@ main {
 
     .description {
         text-align: center;
+        color: red;
+        display: none;
     }
 }
 

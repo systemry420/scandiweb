@@ -20,7 +20,7 @@
         public function insertDisc() {
 			$sku = Disc::$conn->real_escape_string($this->getSku());
             $size = Disc::$conn->real_escape_string($this->getSize());
-			$query="INSERT INTO dvd(sku, size) VALUES ('$sku','$size');";
+			$query="INSERT INTO `dvd`(`product_sku`, `size`) VALUES ('$sku','$size');";
 			return $query;
 		}
     }

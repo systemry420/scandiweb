@@ -26,7 +26,6 @@
     $sql .= $objects[$type]; // prepare objects according to selected type
 
     if (isset($_POST['save'])) {
-        echo $sql;
         if ($conn->multi_query($sql) === true) {
             header("Location: index.php");
         } else {
