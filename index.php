@@ -15,7 +15,7 @@
             <h1>Product List</h1>
             <ul id="buttons">
                 <li>
-                    <a class="button" href="add-product.html" id="add">Add</a>
+                    <a class="button" href="add-product.html">Add</a>
                 </li>
                 <li>
                     <button class="button" type="submit" id="deleteAll" name="deleteAll">Mass Delete</button>
@@ -28,12 +28,12 @@
                 <?php
                     include './model/app.php';
                     $conn = App::connect();
-                    $sql = "select * FROM `dvd`, `products` WHERE sku=product_sku";
+                    $sql = "SELECT * FROM `dvd`, `products` WHERE `sku`=`product_sku`";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
                         <article class="product">
-                            <input type="checkbox" name="delete[]" value="<?php echo $row['sku']; ?>" class="delete-checkbox">
+                            <input type="checkbox" name="delete[]" class="delete-checkbox" value="<?php echo $row['sku']; ?>">
                             <div class="product-info">
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
@@ -50,7 +50,7 @@
             <section class="category-furniture">
                     <?php
                     $conn = App::connect();
-                    $sql = "select * FROM `furniture`, `products` WHERE sku=product_sku";
+                    $sql = "SELECT * FROM `furniture`, `products` WHERE `sku`=`product_sku`";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
@@ -74,7 +74,7 @@
             <section class="category-book">
                     <?php
                     $conn = App::connect();
-                    $sql = "select * FROM `books`, `products` WHERE sku=product_sku";
+                    $sql = "SELECT * FROM `books`, `products` WHERE `sku`=`product_sku`";
                     $result = $conn->query($sql);
                     while ($row = $result->fetch_assoc()) {
                     ?>
@@ -96,8 +96,11 @@
                 $conn = App::connect();
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if (isset($_POST['deleteAll'])) {
+                        if (!isset($_POST['delete'])) {
+                            return;
+                        }
+                        $selectedProducts = $_POST['delete'];
                         if (!empty($selectedProducts)) {
-                            $selectedProducts = $_POST['delete'];
                             $sql = "DELETE FROM products WHERE sku IN ";
                             $sql .= "('" . implode("','", array_values($selectedProducts)) . "')";
                             $result = $conn->query($sql);

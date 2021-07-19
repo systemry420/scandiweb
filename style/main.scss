@@ -87,12 +87,21 @@ main {
                 margin: 0 1em;
             }
 
-            input, select {
-                padding: .8em;
-                width: 50%;
-                outline: none;
-                border-radius: 5px;
-                border: 1px solid gray;
+            div {
+                width: 60%;
+                input, select {
+                    width: 100%;
+                    padding: .8em;
+                    outline: none;
+                    border-radius: 5px;
+                    border: 1px solid gray;
+                }
+
+                .error, .description {
+                    color: red;
+                    text-align: center;
+                    margin: 5px;
+                }
             }
         }
         
@@ -101,10 +110,5 @@ main {
         }
     }
 
-    .description {
-        text-align: center;
-        color: red;
-        display: none;
-    }
 }
 

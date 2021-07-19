@@ -27,59 +27,80 @@
             <div id="form-elements">
                 <div class="form-element">
                     <label for="sku">SKU</label>
-                    <input id="sku" type="text" name="sku" readonly />
+                    <div>
+                        <input id="sku" type="text" name="sku" readonly />
+                    </div>
                 </div>
                 
                 <div class="form-element">
                     <label for="name">Name</label>
-                    <input id="name" type="text" name="name" placeholder="Prodcut Name" required />
+                    <div>
+                        <input id="name" type="text" name="name" placeholder="Prodcut Name" required />
+                        <div class="error" id="name-error"></div>
+                    </div>                    
                 </div>
 
                 <div class="form-element">
                     <label for="price">Price ($)</label>
-                    <input id="price" type="number" name="price" placeholder="Prodcut Price" required />
+                    <div>
+                        <input id="price" type="number" name="price" placeholder="Prodcut Price" required />
+                        <div class="error" id="price-error"></div>
+                    </div>
                 </div>
 
                 <div class="form-element">
                     <label for="productType">Product Type</label>
-                    <select id="#productType" name="productType" required>
-                        <option value="">Select Product Type</option>
-                        <option value="dvd">DVD</option>
-                        <option value="book">Book</option>
-                        <option value="furniture">Furniture</option>
-                    </select>
+                    <div>
+                        <select id="#productType" name="productType" required>
+                            <option value="">Select Product Type</option>
+                            <option value="dvd">DVD</option>
+                            <option value="book">Book</option>
+                            <option value="furniture">Furniture</option>
+                        </select>
+                        <div class="error" id="type-error"></div>    
+                    </div>
                 </div>
 
                 <div id="dvd">
                     <div class="form-element">
                         <label for="size">Size (MB)</label>
-                        <input id="size" type="number" name="size" placeholder="DVD Size" />
+                        <div>
+                            <input id="size" type="number" name="size" placeholder="DVD Size" />
+                            <div class="description">Please, provide size</div>
+                        </div>
                     </div>
-                    <div class="description">Please, provide size</div>
                 </div>
 
                 <div id="furniture">
                     <div class="form-element">
                         <label for="height">Height (CM)</label>
-                        <input id="height" type="number" name="height" placeholder="Furniture Height" />
+                        <div>
+                            <input id="height" type="number" name="height" placeholder="Furniture Height" />
+                        </div>
                     </div>
                     <div class="form-element">
                         <label for="width">Width (CM)</label>
-                        <input id="width" type="number" name="width" placeholder="Furniture Width" />
+                        <div>
+                            <input id="width" type="number" name="width" placeholder="Furniture Width" />
+                        </div>
                     </div>
                     <div class="form-element">
                         <label for="length">Length (CM)</label>
-                        <input id="length" type="number" name="length" placeholder="Furniture Length" />
+                        <div>
+                            <input id="length" type="number" name="length" placeholder="Furniture Length" />
+                            <div class="description">Please, provide dimensions</div>
+                        </div>
                     </div>
-                    <div class="description">Please, provide dimensions</div>
                 </div>
 
                 <div id="book">
                     <div class="form-element">
                         <label for="weight">Weight (KG)</label>
-                        <input id="weight" type="number" name="weight" placeholder="Book Weight" />
+                        <div>
+                            <input id="weight" type="number" name="weight" placeholder="Book Weight" />
+                            <div class="description">Please, provide weight</div>
+                        </div>
                     </div>
-                    <div class="description">Please, provide weight</div>
                 </div>
             </div>
         </main>

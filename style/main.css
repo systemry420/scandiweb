@@ -74,19 +74,22 @@ main #form-elements .form-element label {
   width: 20%;
   margin: 0 1em;
 }
-main #form-elements .form-element input, main #form-elements .form-element select {
+main #form-elements .form-element div {
+  width: 60%;
+}
+main #form-elements .form-element div input, main #form-elements .form-element div select {
+  width: 100%;
   padding: 0.8em;
-  width: 50%;
   outline: none;
   border-radius: 5px;
   border: 1px solid gray;
 }
-main #form-elements #dvd, main #form-elements #furniture, main #form-elements #book {
-  display: none;
-}
-main .description {
-  text-align: center;
+main #form-elements .form-element div .error, main #form-elements .form-element div .description {
   color: red;
+  text-align: center;
+  margin: 5px;
+}
+main #form-elements #dvd, main #form-elements #furniture, main #form-elements #book {
   display: none;
 }
 

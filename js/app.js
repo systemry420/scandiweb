@@ -26,7 +26,8 @@ productTypeSelect.addEventListener("change", (event) => {
 });
 
 addProductForm.addEventListener("submit", function(event) {
-    
+    const valid = null;
+
     if (selectedType === "dvd") {
         valid = validateDisc();
     }
@@ -39,10 +40,6 @@ addProductForm.addEventListener("submit", function(event) {
     
     if (valid) {
         event.target.submit();
-    }
-    else {
-        event.preventDefault();
-        return;
     }
 });
 
@@ -88,13 +85,18 @@ function validateDisc() {
     return true;
 }
 
-// else if (selectedType == "book") {
-//     if (productWeight.value == null) {
-    
-//     }
-// }
-// else if (selectedType == "furniture") {
-//     if (productHeight.value == null || productLength.value == null || productWeight.value == null) {
-        
-//     }
-// }
+function validateBook() {
+    if (productWeight.value == "") {
+        description[1].style.display = "block";
+        return false;
+    }
+    return true;
+}
+
+function validateFurniture() {
+    if (productWidth.value == "" || productLength == "" || productHeight == "") {
+        description[2].style.display = "block";
+        return false;
+    }
+    return true;
+}
