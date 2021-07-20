@@ -60,9 +60,9 @@
                                 <p class="product-sku"> <?php echo $row['sku']; ?></p>
                                 <p class="product-name"> <?php echo $row['name']; ?></p>
                                 <p class="product-price"> <?php echo $row['price']; ?> $</p>
-                                <p class="product-property"><strong>Height:</strong> <?php echo $row['height'] ?> </p>
-                                <p class="product-property"><strong>Width:</strong> <?php echo $row['width'] ?></p>
-                                <p class="product-property"><strong>Length:</strong> <?php echo $row['length'] ?></p>
+                                <p class="product-property"><strong>Dimensions:</strong> 
+                                    <?php echo $row['height'] ?> x <?php echo $row['width'] ?> x <?php echo $row['length'] ?>
+                                </p>
                             </div>
                         </article>
                     <?php

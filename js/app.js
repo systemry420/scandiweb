@@ -26,7 +26,9 @@ productTypeSelect.addEventListener("change", (event) => {
 });
 
 addProductForm.addEventListener("submit", function(event) {
-    const valid = null;
+    event.preventDefault();
+    let valid;
+    console.log(description);
 
     if (selectedType === "dvd") {
         valid = validateDisc();
@@ -78,7 +80,7 @@ function create_unique_sku(){
 }
 
 function validateDisc() {
-    if (productSize.value == "") {
+    if (productSize.value == "" || productSize.value == 0) {
         description[0].style.display = "block";
         return false;
     }

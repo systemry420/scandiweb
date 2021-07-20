@@ -57,12 +57,12 @@ main {
 
     section {
         display: flex;
-        flex-direction: column;
         flex-wrap: wrap;
 
         article.product {
             margin: 1em;
             padding: 3em;
+            width: 30%;
             box-shadow: 0 0 5px 5px lightgray;
             border-radius: 10px;
             input {
